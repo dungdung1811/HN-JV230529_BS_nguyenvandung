@@ -131,6 +131,11 @@ public class Book implements IBook {
 
    @Override
    public int compareTo(Book o) {
-      return (int) - (this.getInterest() - o.getInterest());
+      if (this.getInterest() - o.getInterest() > 0){
+         return -1;
+      } else if (this.getInterest() - o.getInterest() < 0){
+         return 1;
+      }
+      return 0;
    }
 }
